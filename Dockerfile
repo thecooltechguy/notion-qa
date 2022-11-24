@@ -10,4 +10,4 @@ COPY . .
 
 # gunicorn -k gevent -b 0.0.0.0:8081 app:app
 # ENTRYPOINT [ "/bin/bash" ]
-ENTRYPOINT [ "gunicorn", "-k", "gevent", "-b", "0.0.0.0:8080",  "app:app"]
+ENTRYPOINT [ "gunicorn", "-k", "gevent", "-b", "0.0.0.0:$PORT",  "app:app"]

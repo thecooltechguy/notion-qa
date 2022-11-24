@@ -28,6 +28,10 @@ chain = VectorDBQA(llm=OpenAI(
 
 app = Flask(__name__)
 
+@app.route("/health", methods=['get'])
+def api_health():
+    return jsonify(success=True)
+
 @app.route("/api/notion_qa", methods=['post'])
 def api_notion_qa():
     try:
